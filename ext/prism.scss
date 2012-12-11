@@ -1,0 +1,42 @@
+/**
+ * Prism.js Standard Styles
+ *
+ * @author Lea Verou
+ * @editor Maximilian Hoffmann
+ */
+
+code,
+pre {
+	color: #333;
+	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+
+	-moz-tab-size: 2;
+	-o-tab-size: 2;
+	tab-size: 2;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre {
+	font-size: 14px;
+	font-size: 0.875rem;
+	margin: 32px 0 48px 0;
+	margin: 2rem 0 3rem 0;
+	overflow: auto;
+}
+
+pre > code {
+	display: block;
+	padding: 16px;
+	padding: 1rem;
+	margin: 0;
+	line-height: 1.8;
+}

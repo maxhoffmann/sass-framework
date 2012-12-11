@@ -1,0 +1,126 @@
+/**
+ * rem mixins with pixel fallback for < IE9 and Opera Mini
+ */
+
+@function rem( $pixel_value ) {
+
+  @if type-of( $pixel-value ) == 'string' {
+    @return $pixel_value;
+  }
+
+  @if unitless( $pixel_value ) {
+    @return $pixel_value;
+  }
+
+  @if unit( $pixel_value ) == 'px' {
+    @return ($pixel_value/16px)+rem;
+  }
+
+}
+
+@mixin font-size( $font-size ) {
+  font-size: $font-size;
+  font-size: rem($font-size);
+}
+
+/* MARGINS */
+
+@mixin margin( $values ) {
+
+  @if type-of($values) == 'number' {
+
+    margin: $values;
+    margin: rem($values);
+
+  }
+
+  @else {
+
+    $rem_values: ();
+
+    @each $value in $values {
+
+      @if $value == 0 {
+        $rem_values: append($rem_values, $value);
+      }
+
+      @else {
+        $rem_values: append($rem_values, rem($value) );
+      }
+
+    }
+
+    margin: $values;
+    margin: $rem_values;
+
+  }
+
+}
+
+@mixin margin-top( $margin-top ) {
+  margin-top: $margin-top;
+  margin-top: rem($margin-top);
+}
+@mixin margin-right( $margin-right ) {
+  margin-right: $margin-right;
+  margin-right: rem($margin-right);
+}
+@mixin margin-bottom( $margin-bottom ) {
+  margin-bottom: $margin-bottom;
+  margin-bottom: rem($margin-bottom);
+}
+@mixin margin-left( $margin-left ) {
+  margin-left: $margin-left;
+  margin-left: rem($margin-left);
+}
+
+/* PADDINGS */
+
+@mixin padding( $values ) {
+
+  @if type-of($values) == 'number' {
+
+    padding: $values;
+    padding: rem($values);
+
+  }
+
+  @else {
+
+    $rem_values: ();
+
+    @each $value in $values {
+
+      @if $value == 0 {
+        $rem_values: append($rem_values, $value);
+      }
+
+      @else {
+        $rem_values: append($rem_values, rem($value) );
+      }
+
+    }
+
+    padding: $values;
+    padding: $rem_values;
+
+  }
+
+}
+
+@mixin padding-top( $padding-top ) {
+  padding-top: $padding-top;
+  padding-top: rem($padding-top);
+}
+@mixin padding-right( $padding-right ) {
+  padding-right: $padding-right;
+  padding-right: rem($padding-right);
+}
+@mixin padding-bottom( $padding-bottom ) {
+  padding-bottom: $padding-bottom;
+  padding-bottom: rem($padding-bottom);
+}
+@mixin padding-left( $padding-left ) {
+  padding-left: $padding-left;
+  padding-left: rem($padding-left);
+}

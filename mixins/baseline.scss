@@ -1,0 +1,42 @@
+/**
+ * Baseline Grid
+ *
+ * @author Maximilian Hoffmann http://maximilianhoffmann.com
+ */
+
+$font-size: 16px !default;
+$line-height: 24px !default;
+
+@mixin baseline( $size, $space: 1 ) {
+  font-size: ($size/$font-size)+em;
+  line-height: ($line-height/$size)*$space+(floor($size/$line-height)*($line-height/$size))+em;
+}
+
+@mixin margin( $bottom, $top: 0, $left: 0, $right: 0, $font-size: $font-size ) {
+  @if $right != auto {
+    $right: $right*($line-height/$font-size)+em;
+  }
+  @if $left != auto {
+    $left: $left*($line-height/$font-size)+em;
+  }
+  margin: $top*($line-height/$font-size)+em $right $bottom*($line-height/$font-size)+em $left;
+}
+
+@mixin padding( $bottom, $top: 0, $left: 0, $right: 0, $font-size: $font-size ) {
+  padding: $top*($line-height/$font-size)+em $right*($line-height/$font-size)+em $bottom*($line-height/$font-size)+em $left*($line-height/$font-size)+em;
+}
+
+@mixin baseline-grid( $offset: 0, $color: rgba(0,0,0,.12)) {
+  background-image: -moz-linear-gradient(transparent (( $line-height - 1px )/$font-size)+em, $color);
+  background-image: -ms-linear-gradient(transparent (( $line-height - 1px )/$font-size)+em, $color);
+  background-image: -o-linear-gradient(transparent (( $line-height - 1px )/$font-size)+em, $color);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop( (( $line-height - 1px )/$font-size)+em / 100, transparent), to($color));
+  background-image: -webkit-linear-gradient(transparent (( $line-height - 1px )/$font-size)+em, $color);
+  background-image: linear-gradient(transparent (( $line-height - 1px )/$font-size)+em, $color);
+  background-size: 1px $line-height/$font-size+em;
+  background-position-y: $offset+px;
+}
+
+%show-grid {
+  @include baseline-grid();
+}

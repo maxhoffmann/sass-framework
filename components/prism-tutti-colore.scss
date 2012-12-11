@@ -1,0 +1,104 @@
+/**
+ * Espresso Tutti Color (Edit) Theme for Prism
+ *
+ * @author Maximilian Hoffmann maximilianhoffmann.com
+ */
+
+/* Colors */
+
+$black: #000;
+$gray: hsl(200, 6%, 72%);
+$green: hsl(118, 33%, 47%);
+$red: hsl(3, 69%, 54%);
+$blue: hsl(209, 56%, 47%);
+$lightBlue: hsl(205, 75%, 72%);
+$purple: hsl(268, 30%, 50%);
+
+/* CSS */
+
+.language-css {
+
+  .language-css { // values
+    color: $green;
+  }
+
+  .punctuation {
+    color: $black;
+  }
+
+  .property {
+    color: $red;
+  }
+
+  .selector {
+    color: $blue;
+  }
+
+  .comment {
+    color: $gray;
+  }
+
+}
+
+/* HHTML */
+
+.language-markup {
+
+  .language-markup { // text
+    color: $black;
+  }
+
+  .doctype,
+  .comment {
+    color: $gray;
+  }
+
+  .punctuation,
+  .attr-name {
+    color: $lightBlue;
+  }
+
+  .tag {
+    color: $blue;
+  }
+
+  .attr-value {
+    color: $red;
+  }
+
+}
+
+/* JAVASCRIPT */
+
+.language-javascript {
+
+  .language-javascript {
+    color: $blue;
+  }
+
+  .punctuation {
+    color: $black;
+  }
+
+  .comment {
+    color: $gray;
+  }
+
+  .keyword {
+    color: $purple;
+    font-weight: bold;
+  }
+
+  .operator {
+    color: $black;
+  }
+
+  .number {
+    color: $red;
+  }
+
+  .string {
+    color: $green;
+  }
+
+}

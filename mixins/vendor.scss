@@ -1,0 +1,29 @@
+/**
+ * Vendor Mixins
+ *
+ * @author Maximilian Hoffmann maximilianhoffmann.com
+ */
+
+@mixin box-shadow( $values... ) {
+  -webkit-box-shadow: $values;
+  -moz-box-shadow: $values;
+  -ms-box-shadow: $values;
+  -o-box-shadow: $values;
+  box-shadow: $values;
+}
+
+@mixin transition( $values... ) {
+  -webkit-transition: $values;
+  -moz-transition: $values;
+  -o-transition: $values;
+  -ms-transition: $values;
+  transition: $values;
+}
+
+@mixin transform( $values... ) {
+  -webkit-transform: $values;
+  -moz-transform: $values;
+  -o-transform: $values;
+  -ms-transform: $values;
+  transform: $values;
+}

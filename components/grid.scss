@@ -1,0 +1,63 @@
+/**
+ * Component: Grid
+ *
+ * @author Maximilian Hoffmann http://maximilianhoffmann.com
+ */
+
+%centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  @extend %centered;
+  width: 88%;
+  max-width: 1024px;
+}
+
+.col {
+  @extend %centered;
+  max-width: 480px;
+}
+
+@media (min-width: 768px) {
+
+  .col {
+    float: left;
+    overflow: hidden;
+    max-width: none;
+  }
+
+  .col.right {
+    float: right;
+  }
+
+  /* COL SIZES */
+
+  .full { width: 100%; }
+  .half { width: 50%; }
+
+  .third      { width: 33.33%; }
+  .two-thirds { width: 66.66%; }
+
+  .gold-big   { width: 61.8%; }
+  .gold-small { width: 38.2%; }
+
+  .quarter { width: 25%; }
+
+  /* SPACES */
+
+  .space-half { margin-left: 50%; }
+
+  .space-third      { margin-left: 33.33%; }
+  .space-two-thirds { margin-left: 66.66%; }
+
+  .space-gold-big   { margin-left: 61.8%; }
+  .space-gold-small { margin-left: 38.2%; }
+
+  .space-quarter { margin-left: 25%; }
+
+  /* ROW */
+  .new-row { clear: both; }
+
+}
