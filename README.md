@@ -1,4 +1,4 @@
-personal
+Sass Framework
 ========
 
-my personal projects
+some useful components and mixins for my personal projects
