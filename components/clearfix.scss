@@ -2,11 +2,11 @@
  * Clearfix IE8+
  */
 
-%clearfix {
+.clearfix {
   &:before,
   &:after {
-      content: " ";
-      display: table;
+      content: " "; /* 1 */
+      display: table; /* 2 */
   }
 
   &:after {
