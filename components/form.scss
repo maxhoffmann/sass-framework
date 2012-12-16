@@ -1,0 +1,31 @@
+/**
+ * Component: Form
+ *
+ * @author Maximilian Hoffmann http://maximilianhoffmann.com
+ */
+
+form {
+  @extend .clearfix;
+}
+
+label {
+  display: block;
+
+  @media (min-width: 768px) {
+    clear: both;
+    float: left;
+    line-height: 34px;
+  }
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  font-family: inherit;
+}
+
+input[type="submit"],
+button {
+  width: 100%;
+}
