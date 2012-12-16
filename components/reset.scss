@@ -30,9 +30,30 @@ body {
   line-height: 1;
 }
 
-h1,h2,h3,h4,h5,h6,p,blockquote,ul,ol,li,img {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+ul,
+ol,
+li,
+img,
+form,
+fieldset,
+legend,
+label {
   margin: 0;
   padding: 0;
+}
+
+input,
+textarea,
+select {
+  margin: 0;
 }
 
 a {
