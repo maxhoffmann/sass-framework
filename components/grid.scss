@@ -26,10 +26,10 @@
     float: left;
     overflow: hidden;
     max-width: none;
-  }
 
-  .col.right {
-    float: right;
+    &.right {
+      float: right;
+    }
   }
 
   /* COL SIZES */
@@ -43,7 +43,8 @@
   .gold-big   { width: 61.8%; }
   .gold-small { width: 38.2%; }
 
-  .quarter { width: 25%; }
+  .quarter        { width: 25%; }
+  .three-quarters { width: 75%; }
 
   /* SPACES */
 
@@ -55,7 +56,8 @@
   .space-gold-big   { margin-left: 61.8%; }
   .space-gold-small { margin-left: 38.2%; }
 
-  .space-quarter { margin-left: 25%; }
+  .space-quarter        { margin-left: 25%; }
+  .space-three-quarters { margin-left: 75%; }
 
   /* ROW */
   .new-row { clear: both; }
