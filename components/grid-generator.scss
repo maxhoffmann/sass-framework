@@ -1,0 +1,66 @@
+/**
+ * SASS Grid Generator
+ *
+ * @author Maximilian Hoffmann http://maximilianhoffmann.com
+ */
+
+$column-width: 60px;
+$gutter-width: 20px;
+// you may use rems, or other units
+
+$number-of-columns: 12;
+
+$wrapper-name: "wrapper";
+$row-name: "grid";
+$column-prefix: "g";      // example: "col-"    => .col-1, .col-2 ...
+$offset-prefix: "o";      // example: "offset-" => .offset-1, .offset-2 ...
+
+$debug-grid: false!default;
+
+/**
+ * Calculating the grid classes
+ */
+
+.#{$wrapper-name} {
+  width: ($number-of-columns * $column-width) + ( $gutter-width * ($number-of-columns - 1) );
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.#{$row-name} {
+  margin-left: -$gutter-width;
+
+  // Clearfix for IE8+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+}
+
+%float-and-gutter {
+  float: left;
+  margin-left: $gutter-width;
+}
+
+@for $i from 1 through $number-of-columns {
+
+  .#{$column-prefix}#{$i} {
+    @extend %float-and-gutter;
+    width: ($column-width * $i) + (($i - 1) * $gutter-width);
+
+    @if $debug-grid {
+      background: rgba(0,0,0,.05) !important;
+    }
+  }
+
+}
+
+@for $i from 1 through ($number-of-columns - 1) {
+
+  .#{$offset-prefix}#{$i} {
+    margin-left: ( ($column-width + $gutter-width) * $i) + $gutter-width;
+  }
+
+}
