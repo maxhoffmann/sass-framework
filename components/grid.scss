@@ -12,15 +12,15 @@
 .container {
   @extend %centered;
   width: 88%;
-  max-width: 64em;
+  max-width: 64rem;
 }
 
 .col {
   @extend %centered;
-  max-width: 30em;
+  max-width: 30rem;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 48rem) {
 
   .col {
     float: left;
