@@ -1,0 +1,15 @@
+/**
+ * Headings Mixin
+ *
+ * @author Maximilian Hoffmann http://maximilianhoffmann.com
+ */
+
+@mixin headings($from: 1, $to: 6){
+    $heading-selector: (unquote(""));
+    @for $i from $from through $to {
+        $heading-selector: $heading-selector, unquote("h#{$i}")
+    }
+    #{$heading-selector}{
+        @content
+    }
+}
